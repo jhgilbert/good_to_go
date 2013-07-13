@@ -16,8 +16,6 @@
 		background-color: #01a618;
 		color: white;
 		margin-bottom: 10px;
-		margin-top: 20px;
-		margin-left: 20px;
 		display: block;
 		width: 350px;
 		text-align: center;
@@ -40,7 +38,7 @@
 
 <%= link_to "I'm ready to move on", pages_check_in_path, :method => "POST", :remote => true, :class => "button_link" %>
 
-<div id="stats" style="width: 350px; padding: 0 20px 0 20px; border: 1px solid black; margin-left: 20px;">
+<div id="stats" style="width: 350px; padding: 0 20px 0 20px; border: 1px solid black;">
 	<div id="checkin_info">
 		<% if @checkin == nil %>
 		<p>

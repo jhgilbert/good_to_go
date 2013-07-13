@@ -19,17 +19,16 @@
 </script>
 
 <div id="expected_checkins">
- 	<p>How many check-ins are you expecting?</p>
+ 	<p># of check-ins expected:</p>
  	<input type="text" id="expected_count"> <a id="submit_count" style="cursor: pointer; color: blue;">Submit</a>
 </div>
 
 <div id="checkin_stats">
-	<h1>Number of check-ins:</h1>
 	<h1 id="checkin_count">0</h1>
 </div>
 
 <div id="checkin_completion">
 	<p>Everyone has checked in.</p>
-	<p id="reset_checkins"><%= link_to "Reset check-ins", pages_reset_checkins_path, :remote => true %></p>
+	<p id="reset_checkins"><%= link_to "Clear check-ins", pages_reset_checkins_path, :remote => true %></p>
 </div>
 
