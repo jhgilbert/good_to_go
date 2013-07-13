@@ -1,6 +1,7 @@
 GoodToGo::Application.routes.draw do
   get "pages/home"
   root 'pages#home'
+  post "pages/check_in"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
