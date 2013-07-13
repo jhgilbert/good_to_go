@@ -14,4 +14,10 @@ class PagesController < ApplicationController
 
   def status
   end
+
+  def checkin_counter
+  	count = Checkin.all.length
+  	
+  	render :json => count
+  end
 end

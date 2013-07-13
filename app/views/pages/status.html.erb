@@ -5,6 +5,11 @@
     	$('#submit_count').click(function(){
     		$('#expected_checkins').hide();
     		$('#checkin_stats').fadeIn(300);
+    		time=setInterval(function(){
+            	$.getJSON('<%= pages_checkin_counter_path %>', function(data){
+            		$('#checkin_count').html(data);
+            	});
+            },3000);
     	});
   	});
 </script>
