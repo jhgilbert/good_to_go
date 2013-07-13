@@ -1,0 +1,25 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+    	$('#checkin_completion').hide();
+    	$('#checkin_stats').hide();
+    	$('#submit_count').click(function(){
+    		$('#expected_checkins').hide();
+    		$('#checkin_stats').fadeIn(300);
+    	});
+  	});
+</script>
+
+<div id="expected_checkins">
+ 	<p>How many check-ins are you expecting?</p>
+ 	<input type="text"> <a id="submit_count" style="cursor: pointer; color: blue;">Submit</a>
+</div>
+
+<div id="checkin_stats">
+	<h1>Number of check-ins:</h1>
+	<h1 id="checkin_count">0</h1>
+</div>
+
+<div id="checkin_completion">
+	<p>Everyone has checked in.</p>
+	<a id="reset_checkins" style="cursor: pointer; color: blue;">Reset count</a>
+</div>

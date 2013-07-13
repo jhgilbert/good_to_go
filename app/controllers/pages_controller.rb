@@ -11,4 +11,7 @@ class PagesController < ApplicationController
       format.js
     end
   end
+
+  def status
+  end
 end

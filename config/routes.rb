@@ -1,5 +1,6 @@
 GoodToGo::Application.routes.draw do
   get "pages/home"
+  get "pages/status"
   root 'pages#home'
   post "pages/check_in"
 
