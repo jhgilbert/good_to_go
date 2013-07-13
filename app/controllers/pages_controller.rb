@@ -1,11 +1,12 @@
 class PagesController < ApplicationController
   def home
+  	@checkin = Checkin.find_by_user_hash(session[:session_id])
   end
 
   def check_in
-    checkin = Checkin.new
-  	checkin.user_hash = session[:session_id]
-  	checkin.save!
+    @checkin = Checkin.new
+  	@checkin.user_hash = session[:session_id]
+  	@checkin.save!
 
   	respond_to do |format|
       format.js

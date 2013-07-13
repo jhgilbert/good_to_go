@@ -1,9 +1,8 @@
 
 <script type="text/javascript">
-  $(document).ready(function(){
-    $('#status').hide();
-    $('#undo_confirmation').hide();
-  });
+	$(document).ready(function(){
+		$("#undo_checkin_link").hide();
+	});
 </script>
 
 <style type="text/css">
@@ -16,9 +15,11 @@
 		padding: 20px;
 		background-color: #01a618;
 		color: white;
-		margin: 10px;
+		margin-bottom: 10px;
+		margin-top: 20px;
+		margin-left: 20px;
 		display: block;
-		width: 300px;
+		width: 350px;
 		text-align: center;
 		border-radius: 10px;
 		font-family: "Helvetica", sans-serif;
@@ -39,12 +40,24 @@
 
 <%= link_to "I'm ready to move on", pages_check_in_path, :method => "POST", :remote => true, :class => "button_link" %>
 
-<div id="status"></div>
-
-<div id="undo" style="width: 300px; padding: 0 20px 0 20px;">
-	<p style="text-align: center;">
-		<%= link_to "Undo last check-in", pages_undo_checkin_path, :remote => true, :class => "red" %>
+<div id="stats" style="width: 350px; padding: 0 20px 0 20px; border: 1px solid black; margin-left: 20px;">
+	<div id="checkin_info">
+		<% if @checkin == nil %>
+		<p>
+			You have not checked in.
+		</p>
+		<% else %>
+		<p>
+			You checked in at <%= @checkin.created_at.localtime %>.
+		</p>
+		<p id="undo">
+			<%= link_to "Undo check-in", pages_undo_checkin_path, :remote => true, :class => "red" %>
+		</p>
+		<% end %>
+	</div>
+	<p id="undo_checkin_link">
+		<%= link_to "Undo check-in", pages_undo_checkin_path, :remote => true, :class => "red" %>
 	</p>
+
 </div>
 
-<p id="undo_confirmation">Your last checkin has been undone.</p>

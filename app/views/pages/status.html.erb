@@ -9,10 +9,8 @@
     		time=setInterval(function(){
             	$.getJSON('<%= pages_checkin_counter_path %>', function(data){
             		$('#checkin_count').html(data);
-            		$('#form_val').html(class_total);
             		if(class_total == data){
             			$('#checkin_completion').fadeIn(300);
-            			$('#json_val').html(data);
             		}
             	});
             },3000);

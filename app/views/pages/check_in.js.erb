@@ -1,3 +1,2 @@
-$(document).ready(function(){
-  $('#status').html("Your checkin has been recorded. Thanks!").fadeIn(100).fadeOut(2000);
-});
+$('#undo_checkin_link').show();
+$('#checkin_info').html("<p>You checked in at <%= @checkin.created_at.localtime %>.</p>");
