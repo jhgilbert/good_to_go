@@ -3,11 +3,17 @@
     	$('#checkin_completion').hide();
     	$('#checkin_stats').hide();
     	$('#submit_count').click(function(){
+    		var class_total = $('#expected_count').val();
     		$('#expected_checkins').hide();
     		$('#checkin_stats').fadeIn(300);
     		time=setInterval(function(){
             	$.getJSON('<%= pages_checkin_counter_path %>', function(data){
             		$('#checkin_count').html(data);
+            		$('#form_val').html(class_total);
+            		if(class_total == data){
+            			$('#checkin_completion').fadeIn(300);
+            			$('#json_val').html(data);
+            		}
             	});
             },3000);
     	});
@@ -16,7 +22,7 @@
 
 <div id="expected_checkins">
  	<p>How many check-ins are you expecting?</p>
- 	<input type="text"> <a id="submit_count" style="cursor: pointer; color: blue;">Submit</a>
+ 	<input type="text" id="expected_count"> <a id="submit_count" style="cursor: pointer; color: blue;">Submit</a>
 </div>
 
 <div id="checkin_stats">
@@ -28,3 +34,4 @@
 	<p>Everyone has checked in.</p>
 	<a id="reset_checkins" style="cursor: pointer; color: blue;">Reset count</a>
 </div>
+
