@@ -2,7 +2,10 @@
 <script type="text/javascript">
   $(document).ready(function(){
     $('#status').hide();
+    $('#undo_confirmation').hide();
   });
 </script>
 <%= link_to "I'm ready to move on!", pages_check_in_path, :method => "POST", :remote => true %>
 <div id="status"></div>
+<div id="undo"><%= link_to "Undo last check-in", pages_undo_checkin_path, :remote => true %></div>
+<p id="undo_confirmation">Your last checkin has been undone.</p>

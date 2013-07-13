@@ -31,4 +31,13 @@ class PagesController < ApplicationController
   	  format.js
   	end
   end
+
+  def undo_checkin
+  	checkin = Checkin.find_by_user_hash(session[:session_id])
+  	checkin.delete
+
+  	respond_to do |format|
+  	  format.js
+  	end
+  end
 end

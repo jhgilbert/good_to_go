@@ -5,6 +5,7 @@ GoodToGo::Application.routes.draw do
   post "pages/check_in"
   get "pages/checkin_counter"
   get "pages/reset_checkins"
+  get "pages/undo_checkin"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
