@@ -41,4 +41,10 @@ class PagesController < ApplicationController
   	  format.js
   	end
   end
+
+  def refresh_checkin_status
+    checkin = Checkin.find_by_user_hash(session[:session_id])
+
+    render :json => (checkin != nil).to_s
+  end
 end

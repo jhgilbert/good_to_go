@@ -2,6 +2,14 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#undo_checkin_link").hide();
+		time=setInterval(function(){
+            	$.getJSON('<%= pages_refresh_checkin_status_path %>', function(data){
+            		if(data.toString() == "false"){
+            			$('#undo_checkin_link').hide();
+						$('#checkin_info').html("<p>You have not checked in.</p>");
+            		}
+            	});
+            },5000);
 	});
 </script>
 
