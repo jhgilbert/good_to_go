@@ -5,7 +5,46 @@
     $('#undo_confirmation').hide();
   });
 </script>
-<%= link_to "I'm ready to move on!", pages_check_in_path, :method => "POST", :remote => true %>
+
+<style type="text/css">
+
+	a {
+		text-decoration: none;
+	}
+
+	.button_link {
+		padding: 20px;
+		background-color: #01a618;
+		color: white;
+		margin: 10px;
+		display: block;
+		width: 300px;
+		text-align: center;
+		border-radius: 10px;
+		font-family: "Helvetica", sans-serif;
+		font-size: 18px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+
+	.button_link:hover {
+		background-color: #01c01c;
+	}
+
+	.red {
+		color: red;
+	}
+
+</style>
+
+<%= link_to "I'm ready to move on", pages_check_in_path, :method => "POST", :remote => true, :class => "button_link" %>
+
 <div id="status"></div>
-<div id="undo"><%= link_to "Undo last check-in", pages_undo_checkin_path, :remote => true %></div>
+
+<div id="undo" style="width: 300px; padding: 0 20px 0 20px;">
+	<p style="text-align: center;">
+		<%= link_to "Undo last check-in", pages_undo_checkin_path, :remote => true, :class => "red" %>
+	</p>
+</div>
+
 <p id="undo_confirmation">Your last checkin has been undone.</p>
